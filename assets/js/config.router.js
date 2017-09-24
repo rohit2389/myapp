@@ -1,20 +1,23 @@
 
-App.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
                 // For any unmatched url, send to /business
     // $urlRouterProvider.otherwise("/")
      
     $stateProvider
         .state('app', {
         	url: '/',
-        	templateUrl: 'assets/view/app.html'
+        	templateUrl: 'assets/view/app.html',
+            isLogin: false
         })
-        .state('login', {
-        	url: '/login',
-        	templateUrl: 'assets/view/login.html'
+        .state('dashboard', {
+        	url: '/dashboard',
+        	templateUrl: 'assets/view/dashboard.html',
+            isLogin: true
         })
-        .state('/dashboard', {
-        	url: '/',
-        	templateUrl: 'assets/view/dashboard.html'
+        .state('logout', {
+            url: '/logout',
+            templateUrl: 'assets/view/app.html',
+            isLogin: false
         })
     $locationProvider.html5Mode(true);
 }]);
