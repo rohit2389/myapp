@@ -8,7 +8,7 @@ App.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
         	url: '/',
         	templateUrl: 'assets/view/app.html'
         })
-        .state('app.login', {
+        .state('login', {
         	url: '/login',
         	templateUrl: 'assets/view/login.html'
         })
